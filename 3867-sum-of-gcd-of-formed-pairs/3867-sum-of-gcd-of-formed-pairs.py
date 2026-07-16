@@ -5,13 +5,14 @@ class Solution:
         n = len(nums)
         prefixGcd = []
         
-        
+     
         current_max = 0
         for num in nums:
-            current_max = max(current_max, num)
+            if num > current_max:
+                current_max = num
             prefixGcd.append(math.gcd(num, current_max))
             
-        
+       
         prefixGcd.sort()
         
         
